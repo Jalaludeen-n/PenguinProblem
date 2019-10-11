@@ -1,0 +1,3 @@
+interface Penguin {
+    int calculate();
+}
