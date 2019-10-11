@@ -1,8 +1,13 @@
 import java.text.DecimalFormat;
 
 public class FemalePenguin implements Penguin {
-    final float charge = 145;
-    final int percentage = 7;
+    final float charge;
+    final int percentage;
+
+    public FemalePenguin(int festivalHikeForFemale, int charge) {
+        this.charge = charge;
+        this.percentage = festivalHikeForFemale;
+    }
 
     @Override
     public float calculate() {

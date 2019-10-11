@@ -7,7 +7,7 @@ public class Tailor {
 
     public Tailor(List<Penguin> penguin, Charges charges) {
         this.penguins = penguin;
-        this.charges=charges;
+        this.charges = charges;
     }
 
     String stitching() {

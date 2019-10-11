@@ -8,18 +8,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PenguinTest {
     Charges helperMethodToCharge() {
-        int malePenguin = 120;
-        int femalePenguin = 145;
-        int childPenguin = 170;
+        int malePenguinCharge = 120;
+        int femalePenguinCharge = 145;
+        int childPenguinCharge = 170;
         int festivalHikeForMale = 5;
         int festivalHikeForFemale = 7;
         int festivalHikeForBaby = 3;
         int discountFor1000 = 10;
         int discountFor2000 = 25;
 
-        Charges charges = new Charges(malePenguin,
-                femalePenguin,
-                childPenguin,
+        Charges charges = new Charges(malePenguinCharge,
+                femalePenguinCharge,
+                childPenguinCharge,
                 festivalHikeForMale,
                 festivalHikeForFemale,
                 festivalHikeForBaby,
@@ -31,28 +31,28 @@ public class PenguinTest {
 
     void helperMethodForMalePenguin(int totalFemalePenguin, List<Penguin> penguin) {
         for (int i = 0; i < totalFemalePenguin; i++) {
-            penguin.add(new MalePenguin());
+            penguin.add(new MalePenguin(helperMethodToCharge().getFestivalHikeForMale(), helperMethodToCharge().getMalePenguin()));
         }
 
     }
 
     void helperMethodForFemalePenguin(int totalFemalePenguin, List<Penguin> penguin) {
         for (int i = 0; i < totalFemalePenguin; i++) {
-            penguin.add(new FemalePenguin());
+            penguin.add(new FemalePenguin(helperMethodToCharge().getFestivalHikeForFemale(), helperMethodToCharge().getFemalePenguin()));
         }
 
     }
 
     void helperMethodForBabyPenguin(int totalFemalePenguin, List<Penguin> penguin) {
         for (int i = 0; i < totalFemalePenguin; i++) {
-            penguin.add(new BabyPenguin());
+            penguin.add(new BabyPenguin(helperMethodToCharge().getFestivalHikeForBaby(), helperMethodToCharge().getBabyPenguin()));
         }
 
     }
 
     @Test
-    void StitchingForMalePenguin() {
-        Penguin malePenguin = new MalePenguin();
+    void stitchingForMalePenguin() {
+        Penguin malePenguin = new MalePenguin(helperMethodToCharge().getFestivalHikeForMale(), helperMethodToCharge().getMalePenguin());
         List<Penguin> penguins = new ArrayList<>();
         penguins.add(malePenguin);
         Tailor tailor = new Tailor(penguins, helperMethodToCharge());
@@ -60,7 +60,7 @@ public class PenguinTest {
     }
 
     @Test
-    void StitchingForMalePenguins() {
+    void stitchingForMalePenguins() {
         List<Penguin> penguins = new ArrayList<>();
         helperMethodForMalePenguin(4, penguins);
         Tailor tailor = new Tailor(penguins, helperMethodToCharge());
@@ -68,8 +68,8 @@ public class PenguinTest {
     }
 
     @Test
-    void StitchingForFemalePenguin() {
-        Penguin femalePenguin = new FemalePenguin();
+    void stitchingForFemalePenguin() {
+        Penguin femalePenguin = new FemalePenguin(helperMethodToCharge().getFestivalHikeForFemale(), helperMethodToCharge().getFemalePenguin());
         List<Penguin> penguins = new ArrayList<>();
         penguins.add(femalePenguin);
         Tailor tailor = new Tailor(penguins, helperMethodToCharge());
@@ -77,16 +77,16 @@ public class PenguinTest {
     }
 
     @Test
-    void StitchingForFemalePenguins() {
+    void stitchingForFemalePenguins() {
         List<Penguin> penguins = new ArrayList<>();
-       helperMethodForFemalePenguin(4,penguins);
-       Tailor tailor = new Tailor(penguins, helperMethodToCharge());
+        helperMethodForFemalePenguin(4, penguins);
+        Tailor tailor = new Tailor(penguins, helperMethodToCharge());
         assertEquals("620.6", tailor.stitching());
     }
 
     @Test
-    void StitchingForChildPenguin() {
-        Penguin childPenguin = new BabyPenguin();
+    void stitchingForChildPenguin() {
+        Penguin childPenguin = new BabyPenguin(helperMethodToCharge().getFestivalHikeForBaby(), helperMethodToCharge().getBabyPenguin());
         List<Penguin> penguins = new ArrayList<>();
         penguins.add(childPenguin);
         Tailor tailor = new Tailor(penguins, helperMethodToCharge());
@@ -94,25 +94,25 @@ public class PenguinTest {
     }
 
     @Test
-    void StitchingForChildPenguins() {
+    void stitchingForChildPenguins() {
         List<Penguin> penguins = new ArrayList<>();
-        helperMethodForBabyPenguin(4,penguins);
+        helperMethodForBabyPenguin(4, penguins);
         Tailor tailor = new Tailor(penguins, helperMethodToCharge());
         assertEquals("700.4", tailor.stitching());
     }
 
     @Test
-    void StitchingChargeMoreThan1000() {
+    void stitchingChargeMoreThan1000() {
         List<Penguin> penguins = new ArrayList<>();
-        helperMethodForBabyPenguin(8,penguins);
+        helperMethodForBabyPenguin(8, penguins);
         Tailor tailor = new Tailor(penguins, helperMethodToCharge());
         assertEquals("1,260.72", tailor.stitching());
     }
 
     @Test
-    void StitchingChargeMoreThan2500() {
+    void stitchingChargeMoreThan2500() {
         List<Penguin> penguins = new ArrayList<>();
-        helperMethodForBabyPenguin(20,penguins);
+        helperMethodForBabyPenguin(20, penguins);
         Tailor tailor = new Tailor(penguins, helperMethodToCharge());
         assertEquals("2,626.5", tailor.stitching());
     }
@@ -123,11 +123,11 @@ public class PenguinTest {
 //            479.25
     //
     @Test
-    void TwoMaleOneFemaleOneBaby() {
+    void twoMaleOneFemaleOneBaby() {
         List<Penguin> penguins = new ArrayList<>();
-        helperMethodForMalePenguin(2,penguins);
-        penguins.add(new BabyPenguin());
-        penguins.add(new FemalePenguin());
+        helperMethodForMalePenguin(2, penguins);
+//        penguins.add(new BabyPenguin());
+//        penguins.add(new FemalePenguin());
         Tailor tailor = new Tailor(penguins, helperMethodToCharge());
         assertEquals("492.25", tailor.stitching());
     }

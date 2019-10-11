@@ -1,9 +1,14 @@
 public class MalePenguin implements Penguin {
-    final float charge = 120;
-    final int percentage = 5;
+    private final float charge;
+    private final int percentage;
+
+    public MalePenguin(int festivalHikeForMale, int charge) {
+        this.charge = charge;
+        this.percentage = festivalHikeForMale;
+    }
 
     @Override
     public float calculate() {
-        return  (charge * (percentage / 100.0f)) + charge;
+        return (charge * (percentage / 100.0f)) + charge;
     }
 }

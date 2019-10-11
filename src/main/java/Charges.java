@@ -1,7 +1,7 @@
 public class Charges {
     private final int malePenguin;
     private final int femalePenguin;
-    private final int childPenguin;
+    private final int babyPenguin;
     private final int festivalHikeForMale;
     private final int festivalHikeForFemale;
     private final int festivalHikeForBaby;
@@ -18,10 +18,10 @@ public class Charges {
     private final int discountFor2000;
 
 
-    public Charges(int malePenguin, int femalePenguin, int childPenguin, int festivalHikeForMale, int festivalHikeForFemale, int festivalHikeForBaby, int discountFor1000, int discountFor2000) {
+    public Charges(int malePenguin, int femalePenguin, int babyPenguin, int festivalHikeForMale, int festivalHikeForFemale, int festivalHikeForBaby, int discountFor1000, int discountFor2000) {
         this.malePenguin = malePenguin;
         this.femalePenguin = femalePenguin;
-        this.childPenguin = childPenguin;
+        this.babyPenguin = babyPenguin;
         this.festivalHikeForMale = festivalHikeForMale;
         this.festivalHikeForFemale = festivalHikeForFemale;
         this.festivalHikeForBaby = festivalHikeForBaby;
@@ -39,8 +39,8 @@ public class Charges {
         return femalePenguin;
     }
 
-    public int getChildPenguin() {
-        return childPenguin;
+    public int getBabyPenguin() {
+        return babyPenguin;
     }
 
     public int getFestivalHikeForMale() {
