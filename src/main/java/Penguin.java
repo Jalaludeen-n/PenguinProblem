@@ -1,3 +1,3 @@
 interface Penguin {
-    int calculate();
+    float calculate();
 }

@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class Tailor {
@@ -7,11 +8,13 @@ public class Tailor {
         this.penguins = penguin;
     }
 
-    int stitching() {
-        int totalCost=0;
+    String stitching() {
+        DecimalFormat decimalFormat = new DecimalFormat();
+        decimalFormat.setMaximumFractionDigits(2);
+        float totalCost = 0;
         for (Penguin penguin : penguins) {
-            totalCost+=penguin.calculate();
+            totalCost += penguin.calculate();
         }
-        return totalCost;
+        return decimalFormat.format(totalCost);
     }
 }
