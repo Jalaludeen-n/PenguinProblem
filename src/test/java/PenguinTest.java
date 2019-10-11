@@ -64,4 +64,14 @@ public class PenguinTest {
         assertEquals("1,400.8", tailor.stitching());
     }
 
+    @Test
+    void StitchingChargeMoreThan1000() {
+        List<Penguin> penguins = new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            penguins.add(new ChildPenguin());
+        }
+        Tailor tailor = new Tailor(penguins);
+        assertEquals("1,260.72", tailor.stitching());
+    }
+
 }

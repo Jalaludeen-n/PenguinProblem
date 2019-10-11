@@ -15,6 +15,8 @@ public class Tailor {
         for (Penguin penguin : penguins) {
             totalCost += penguin.calculate();
         }
+        if (totalCost >= 1000)
+            totalCost -= totalCost * (10 / 100.0f);
         return decimalFormat.format(totalCost);
     }
 }
