@@ -1,4 +1,4 @@
-public class ChildPenguin implements Penguin {
+public class BabyPenguin implements Penguin {
     final float charge = 170;
     final int percentage = 3;
 
