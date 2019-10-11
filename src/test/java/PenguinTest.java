@@ -19,11 +19,11 @@ public class PenguinTest {
     @Test
     void StitchingForMalePenguins() {
         List<Penguin> penguins = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 4; i++) {
             penguins.add(new MalePenguin());
         }
         Tailor tailor = new Tailor(penguins);
-        assertEquals("1,008", tailor.stitching());
+        assertEquals("504", tailor.stitching());
     }
 
     @Test
@@ -38,11 +38,11 @@ public class PenguinTest {
     @Test
     void StitchingForFemalePenguins() {
         List<Penguin> penguins = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 4; i++) {
             penguins.add(new FemalePenguin());
         }
         Tailor tailor = new Tailor(penguins);
-        assertEquals("1,241.2", tailor.stitching());
+        assertEquals("620.6", tailor.stitching());
     }
 
     @Test
@@ -57,11 +57,11 @@ public class PenguinTest {
     @Test
     void StitchingForChildPenguins() {
         List<Penguin> penguins = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 4; i++) {
             penguins.add(new ChildPenguin());
         }
         Tailor tailor = new Tailor(penguins);
-        assertEquals("1,400.8", tailor.stitching());
+        assertEquals("700.4", tailor.stitching());
     }
 
     @Test
@@ -72,6 +72,16 @@ public class PenguinTest {
         }
         Tailor tailor = new Tailor(penguins);
         assertEquals("1,260.72", tailor.stitching());
+    }
+
+    @Test
+    void StitchingChargeMoreThan2500() {
+        List<Penguin> penguins = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            penguins.add(new ChildPenguin());
+        }
+        Tailor tailor = new Tailor(penguins);
+        assertEquals("2,626.5", tailor.stitching());
     }
 
 }
