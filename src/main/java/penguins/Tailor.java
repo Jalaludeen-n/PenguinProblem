@@ -1,9 +1,6 @@
 package penguins;
 
-import com.sun.tools.javac.jvm.Items;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Arrays.stream;
@@ -11,17 +8,17 @@ import static java.util.Arrays.stream;
 public class Tailor {
 
 
-    public Bill stitch(List<Matirials> matirials) {
+    public Bill stitch(List<Materials> matirials) {
         List<Item> items = new ArrayList<>();
         int bybyMatirial = 0, maleMaterial = 0, femaleMaterial = 0;
         for (int i = 0; i < matirials.size(); i++) {
-            if (matirials.get(i).equals(Matirials.BABY)) {
+            if (matirials.get(i).equals(Materials.BABY)) {
                 bybyMatirial++;
             }
-            if (matirials.get(i).equals(Matirials.MALE)) {
+            if (matirials.get(i).equals(Materials.MALE)) {
                 maleMaterial++;
             }
-            if (matirials.get(i).equals(Matirials.FEMALE)) {
+            if (matirials.get(i).equals(Materials.FEMALE)) {
                 femaleMaterial++;
             }
         }

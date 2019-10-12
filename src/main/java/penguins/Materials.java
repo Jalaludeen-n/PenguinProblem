@@ -1,5 +1,5 @@
 package penguins;
 
-public enum Matirials {
+public enum Materials {
     MALE, FEMALE, BABY;
 }
