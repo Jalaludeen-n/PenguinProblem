@@ -1,3 +1,0 @@
-interface Penguin {
-    float calculate();
-}
