@@ -1,10 +1,20 @@
 package penguins;
 
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
 public class PenguinMain {
     public static void main(String... agrs) {
         Bill bill;
         Tailor tailor = new Tailor();
-        bill = tailor.stitch(2, 1, 1);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Male : ");
+        int male = scanner.nextInt();
+        System.out.println("FeMale : ");
+        int female = scanner.nextInt();
+        System.out.println("Baby : ");
+        int baby = scanner.nextInt();
+        bill = tailor.stitch(male, female, baby);
         System.out.println(bill.netAmount());
     }
 }
